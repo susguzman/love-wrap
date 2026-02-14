@@ -481,6 +481,8 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.5);
   overflow: hidden;
   transition: transform 0.3s ease;
+  text-decoration: none;
+  color: inherit;
 }
 
 .song-item:hover {
@@ -516,6 +518,15 @@ body {
   display: flex;
   align-items: center;
   gap: 16px;
+}
+
+.song-cover {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  flex-shrink: 0;
 }
 
 .song-number {
