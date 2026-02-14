@@ -19,7 +19,7 @@ html {
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Cormorant Garamond', serif;
   color: #4a2040;
   background: linear-gradient(180deg, #fff0f3 0%, #fce4ec 30%, #f8d0db 60%, #fce4ec 100%);
   background-attachment: fixed;
@@ -88,7 +88,7 @@ body {
 }
 
 .section-title {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Great Vibes', cursive;
   font-size: 1.8rem;
   font-weight: 700;
   text-align: center;
@@ -145,7 +145,7 @@ body {
 }
 
 .hero-title {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Great Vibes', cursive;
   font-size: 2.6rem;
   font-weight: 700;
   line-height: 1.15;
@@ -183,7 +183,7 @@ body {
 }
 
 .hero-subtitle {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Great Vibes', cursive;
   font-style: italic;
   font-size: 1.15rem;
   color: #a04a6b;
@@ -233,7 +233,7 @@ body {
 
 .hero-btn {
   display: inline-block;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: 1rem;
   font-weight: 500;
   padding: 14px 36px;
@@ -375,7 +375,7 @@ body {
 }
 
 .highlight-text {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Great Vibes', cursive;
   font-style: italic;
   font-size: 1.12rem !important;
   color: #a0204e !important;
@@ -442,7 +442,7 @@ body {
 }
 
 .stat-value {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Great Vibes', cursive;
   font-size: 1.35rem;
   font-weight: 700;
   color: #7b1e50;
@@ -488,7 +488,7 @@ body {
 }
 
 .stat-bar-percent {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Great Vibes', cursive;
   font-weight: 700;
   font-size: 0.95rem;
   color: #7b1e50;
@@ -571,7 +571,7 @@ body {
 }
 
 .song-number {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Great Vibes', cursive;
   font-size: 1.5rem;
   font-weight: 700;
   color: #d63a6b;
@@ -627,7 +627,7 @@ body {
 }
 
 .detail-line {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Great Vibes', cursive;
   font-size: 1.25rem;
   font-style: italic;
   color: #7b1e50;
@@ -682,7 +682,7 @@ body {
 .lesson-quote {
   max-width: 400px;
   text-align: center;
-  font-family: 'Playfair Display', serif;
+  font-family: 'Great Vibes', cursive;
   font-style: italic;
   font-size: 1.3rem;
   line-height: 1.7;
@@ -752,7 +752,7 @@ body {
 }
 
 .compat-percent {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Great Vibes', cursive;
   font-size: 2.8rem;
   font-weight: 700;
   color: #7b1e50;
@@ -764,7 +764,7 @@ body {
 }
 
 .compat-result-main {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Great Vibes', cursive;
   font-size: 1.6rem;
   text-align: center;
   color: #7b1e50;
@@ -852,7 +852,7 @@ body {
 }
 
 .final-message p {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Great Vibes', cursive;
   font-style: italic;
   font-size: 1.3rem;
   line-height: 1.7;
@@ -916,7 +916,7 @@ body {
 }
 
 .lion-label {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Great Vibes', cursive;
   font-size: 1.6rem;
   color: #c0192e;
   margin-top: 8px;
@@ -926,7 +926,7 @@ body {
 /* --- "Hecho con todo mi amor" Button --- */
 .made-with-btn {
   display: inline-block;
-  font-family: 'Playfair Display', serif;
+  font-family: 'Great Vibes', cursive;
   font-size: 1.1rem;
   font-weight: 600;
   padding: 16px 40px;
