@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,9 +8,12 @@
   <meta name="description" content="Nuestro Love Wrapped 2024–2025 — Una historia de amor contada como nunca antes.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
   <!-- ===== Floating Hearts Background ===== -->
@@ -46,7 +50,8 @@
         <div class="timeline-dot"></div>
         <div class="timeline-content">
           <span class="timeline-date">2024</span>
-          <p>Fuimos amigos por mucho tiempo. Risas, conversaciones, momentos que parecían casuales pero construían algo más grande.</p>
+          <p>Fuimos amigos por mucho tiempo. Risas, conversaciones, momentos que parecían casuales pero construían algo
+            más grande.</p>
         </div>
       </div>
 
@@ -145,7 +150,8 @@
             <p class="song-artist">Kapo</p>
           </div>
         </div>
-        <button class="song-play" aria-label="Play Korazong">▶</button>
+        <a class="song-play" href="https://open.spotify.com/track/43J20QsNeYhG23RcLHIGIn?si=67886625e02a4d09"
+          target="_blank" rel="noopener" aria-label="Play Korazong">▶</a>
       </div>
 
       <div class="song-item reveal">
@@ -157,7 +163,8 @@
             <p class="song-artist">Rihanna</p>
           </div>
         </div>
-        <button class="song-play" aria-label="Play Stay">▶</button>
+        <a class="song-play" href="https://open.spotify.com/track/0GNI8K3VATWBABQFAzBAYe?si=69814ab8a3b64667"
+          target="_blank" rel="noopener" aria-label="Play Stay">▶</a>
       </div>
 
       <div class="song-item reveal">
@@ -169,7 +176,8 @@
             <p class="song-artist">Julión Álvarez</p>
           </div>
         </div>
-        <button class="song-play" aria-label="Play Regalito de Dios">▶</button>
+        <a class="song-play" href="https://open.spotify.com/track/51qYdMBxt9mFbtZBzq1Yfi?si=569a89fce0e547bd"
+          target="_blank" rel="noopener" aria-label="Play Regalito de Dios">▶</a>
       </div>
     </div>
   </section>
@@ -233,16 +241,18 @@
       <p>Y si el destino nos unió una vez…<br>no tengo dudas de que seguirá escribiendo nuestra historia.</p>
     </div>
 
-    <!-- Lion Closing -->
-    <div class="lion-closing reveal" id="lionClosing">
+    <!-- Love Button -->
+    <button class="made-with-btn reveal" id="showLionBtn">Hecho con todo mi amor ❤️</button>
+
+    <!-- Lion Closing (hidden until button click) -->
+    <div class="lion-closing" id="lionClosing" style="display:none;">
       <div class="lion-glow" aria-hidden="true"></div>
       <span class="lion-emoji">🦁</span>
-      <p class="lion-label">Mi Leona 💛</p>
+      <p class="lion-label">Te Amo ❤️</p>
     </div>
-
-    <p class="made-with reveal">Hecho con todo mi amor</p>
   </section>
 
   <script src="script.js"></script>
 </body>
+
 </html>

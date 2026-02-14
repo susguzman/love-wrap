@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initStatBars();
   initCompatibilityAnalysis();
   initFallingPetals();
+  initShowLionButton();
 });
 
 /* ---------- 1. Floating Hearts Background ---------- */
@@ -209,5 +210,63 @@ function initFallingPetals() {
     petal.style.setProperty('--rotation', `${90 + Math.random() * 180}deg`);
     petal.style.fontSize = `${0.7 + Math.random() * 0.6}rem`;
     container.appendChild(petal);
+  }
+}
+
+/* ---------- 8. Show Lion Button ---------- */
+function initShowLionButton() {
+  const btn = document.getElementById('showLionBtn');
+  const lion = document.getElementById('lionClosing');
+  if (!btn || !lion) return;
+
+  btn.addEventListener('click', () => {
+    // Hide button with fade
+    btn.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+    btn.style.opacity = '0';
+    btn.style.transform = 'scale(0.8)';
+
+    setTimeout(() => {
+      btn.style.display = 'none';
+
+      // Show lion with pop-in animation
+      lion.style.display = '';
+      lion.classList.add('lion-visible');
+
+      // Scroll lion into view
+      lion.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+      // Create burst of red hearts
+      createHeartBurst(lion);
+    }, 400);
+  });
+}
+
+function createHeartBurst(container) {
+  const hearts = ['❤️', '💕', '💗', '❤️‍🔥', '❣️'];
+  for (let i = 0; i < 15; i++) {
+    const heart = document.createElement('span');
+    heart.textContent = hearts[Math.floor(Math.random() * hearts.length)];
+    heart.style.cssText = `
+      position: absolute;
+      font-size: ${0.8 + Math.random() * 1.2}rem;
+      left: 50%;
+      top: 50%;
+      pointer-events: none;
+      z-index: 10;
+      opacity: 1;
+      transition: all ${0.8 + Math.random() * 0.8}s cubic-bezier(0.22, 1, 0.36, 1);
+    `;
+    container.appendChild(heart);
+
+    // Animate outward
+    requestAnimationFrame(() => {
+      const angle = (Math.PI * 2 * i) / 15;
+      const distance = 80 + Math.random() * 80;
+      heart.style.transform = `translate(${Math.cos(angle) * distance}px, ${Math.sin(angle) * distance}px) scale(0.3)`;
+      heart.style.opacity = '0';
+    });
+
+    // Remove after animation
+    setTimeout(() => heart.remove(), 1800);
   }
 }
