@@ -4,6 +4,7 @@
    ============================================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
+  initWaveBackground();
   initFloatingHearts();
   initScrollReveals();
   initParallax();
@@ -13,6 +14,62 @@ document.addEventListener('DOMContentLoaded', () => {
   initFallingPetals();
   initShowLionButton();
 });
+
+/* ---------- 0. Animated Wave Background ---------- */
+function initWaveBackground() {
+  const canvas = document.getElementById('waveBg');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+
+  let scrollY = 0;
+  let animFrame;
+
+  function resize() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+  resize();
+  window.addEventListener('resize', resize);
+  window.addEventListener('scroll', () => { scrollY = window.scrollY; });
+
+  const waves = [
+    { amplitude: 40, frequency: 0.008, speed: 0.015, yOffset: 0.2, color: 'rgba(120, 15, 30, 0.06)' },
+    { amplitude: 55, frequency: 0.006, speed: -0.01, yOffset: 0.4, color: 'rgba(100, 10, 25, 0.05)' },
+    { amplitude: 35, frequency: 0.01, speed: 0.02, yOffset: 0.6, color: 'rgba(140, 20, 40, 0.055)' },
+    { amplitude: 50, frequency: 0.007, speed: -0.018, yOffset: 0.8, color: 'rgba(90, 10, 20, 0.045)' },
+  ];
+
+  let time = 0;
+
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    const scrollOffset = scrollY * 0.3;
+
+    waves.forEach((wave) => {
+      ctx.beginPath();
+      const baseY = canvas.height * wave.yOffset + scrollOffset * (wave.speed > 0 ? 0.15 : -0.1);
+
+      for (let x = 0; x <= canvas.width; x += 2) {
+        const y = baseY
+          + Math.sin(x * wave.frequency + time * wave.speed) * wave.amplitude
+          + Math.sin(x * wave.frequency * 0.5 + time * wave.speed * 1.3) * (wave.amplitude * 0.4);
+        if (x === 0) ctx.moveTo(x, y);
+        else ctx.lineTo(x, y);
+      }
+
+      ctx.lineTo(canvas.width, canvas.height);
+      ctx.lineTo(0, canvas.height);
+      ctx.closePath();
+      ctx.fillStyle = wave.color;
+      ctx.fill();
+    });
+
+    time += 1;
+    animFrame = requestAnimationFrame(draw);
+  }
+
+  draw();
+}
 
 /* ---------- 1. Floating Hearts Background ---------- */
 function initFloatingHearts() {
