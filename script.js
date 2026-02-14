@@ -53,10 +53,10 @@ function initWaveBackground() {
   window.addEventListener('scroll', () => { scrollY = window.scrollY; });
 
   const waves = [
-    { amplitude: 40, frequency: 0.008, speed: 0.015, yOffset: 0.2, color: 'rgba(120, 15, 30, 0.06)' },
-    { amplitude: 55, frequency: 0.006, speed: -0.01, yOffset: 0.4, color: 'rgba(100, 10, 25, 0.05)' },
-    { amplitude: 35, frequency: 0.01, speed: 0.02, yOffset: 0.6, color: 'rgba(140, 20, 40, 0.055)' },
-    { amplitude: 50, frequency: 0.007, speed: -0.018, yOffset: 0.8, color: 'rgba(90, 10, 20, 0.045)' },
+    { amplitude: 40, frequency: 0.008, speed: 0.015, yOffset: 0.2, color: 'rgba(139, 42, 42, 0.08)' },
+    { amplitude: 55, frequency: 0.006, speed: -0.01, yOffset: 0.4, color: 'rgba(201, 168, 76, 0.04)' },
+    { amplitude: 35, frequency: 0.01, speed: 0.02, yOffset: 0.6, color: 'rgba(139, 42, 42, 0.06)' },
+    { amplitude: 50, frequency: 0.007, speed: -0.018, yOffset: 0.8, color: 'rgba(201, 168, 76, 0.035)' },
   ];
 
   let time = 0;
