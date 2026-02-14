@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initFallingPetals();
   initShowLionButton();
   initCarousel();
+  initStars();
   initScrollArrow();
 });
 
@@ -409,4 +410,39 @@ function initCarousel() {
     startAuto();
   }
   startAuto();
+}
+
+/* ---------- 10. Starry Background ---------- */
+function initStars() {
+  const container = document.getElementById('starsBg');
+  if (!container) return;
+
+  const starCount = 60; // Adjust for density
+
+  for (let i = 0; i < starCount; i++) {
+    const star = document.createElement('div');
+    star.classList.add('star');
+
+    // Random position
+    const left = Math.random() * 100;
+    const top = Math.random() * 100;
+
+    // Random size
+    const size = Math.random() * 2.5 + 1; // 1px to 3.5px
+
+    // Random animation props
+    const duration = Math.random() * 3 + 2; // 2s to 5s
+    const delay = Math.random() * 5;
+    const maxOpacity = Math.random() * 0.5 + 0.4; // 0.4 to 0.9
+
+    star.style.left = `${left}%`;
+    star.style.top = `${top}%`;
+    star.style.width = `${size}px`;
+    star.style.height = `${size}px`;
+    star.style.setProperty('--duration', `${duration}s`);
+    star.style.setProperty('--delay', `${delay}s`);
+    star.style.setProperty('--max-opacity', maxOpacity);
+
+    container.appendChild(star);
+  }
 }
