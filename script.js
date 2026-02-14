@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initShowLionButton();
   initCarousel();
   initStars();
+  initDaysCounter();
   initScrollArrow();
 });
 
@@ -445,4 +446,40 @@ function initStars() {
 
     container.appendChild(star);
   }
+}
+
+
+/* ---------- 11. Days Counter ---------- */
+function initDaysCounter() {
+  const el = document.getElementById('daysCount');
+  if (!el) return;
+
+  const startDate = new Date('2025-09-20T00:00:00');
+  const now = new Date();
+  const diffTime = Math.abs(now - startDate);
+  const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+
+  // Animate number
+  let start = 0;
+  const duration = 2000;
+  const startTime = performance.now();
+
+  function update(currentTime) {
+    const elapsed = currentTime - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+
+    // Ease out quart
+    const ease = 1 - Math.pow(1 - progress, 4);
+
+    const currentVal = Math.floor(ease * diffDays);
+    el.textContent = currentVal;
+
+    if (progress < 1) {
+      requestAnimationFrame(update);
+    } else {
+      el.textContent = diffDays;
+    }
+  }
+
+  requestAnimationFrame(update);
 }

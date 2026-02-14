@@ -460,6 +460,28 @@ body {
   width: 100%;
 }
 
+.days-counter {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.days-number {
+  display: block;
+  font-family: 'Great Vibes', cursive;
+  font-size: 5rem;
+  line-height: 1;
+  color: #c9a84c;
+  text-shadow: 0 4px 20px rgba(201, 168, 76, 0.3);
+}
+
+.days-label {
+  display: block;
+  font-size: 1.1rem;
+  color: #a89880;
+  margin-top: 8px;
+  letter-spacing: 0.05em;
+}
+
 .stat-phrase {
   display: flex;
   flex-direction: column;
