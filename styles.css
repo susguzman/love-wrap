@@ -770,7 +770,7 @@ body {
 }
 
 .album-photo:hover {
-  transform: rotate(-1deg) scale(1.03);
+  transform: rotate(-6deg) scale(1.03);
 }
 
 .album-frame {
