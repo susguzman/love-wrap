@@ -30,9 +30,6 @@
       <p class="hero-subtitle reveal reveal-delay-2">Desde febrero de 2024 hasta hoy…</p>
       <button class="hero-btn reveal reveal-delay-3" id="startBtn">Comenzar nuestra historia</button>
     </div>
-    <div class="scroll-indicator reveal reveal-delay-3" aria-hidden="true">
-      <span class="scroll-arrow">↓</span>
-    </div>
   </section>
 
   <!-- ===== 2. CÓMO NOS CONOCIMOS ===== -->
@@ -235,13 +232,21 @@
       </div>
     </div>
 
+    <!-- Album Photo -->
+    <div class="album-photo reveal">
+      <div class="album-frame">
+        <img src="img/final.jpeg" alt="Nuestra foto" />
+      </div>
+      <div class="album-shadow" aria-hidden="true"></div>
+    </div>
+
     <!-- Final Message -->
     <div class="final-message reveal">
       <p>Y si el destino nos unió una vez…<br>no tengo dudas de que seguirá escribiendo nuestra historia.</p>
     </div>
 
     <!-- Love Button -->
-    <button class="made-with-btn reveal" id="showLionBtn">Hecho con todo mi amor ❤️</button>
+    <button class="made-with-btn made-with-btn--small reveal" id="showLionBtn">Hecho con todo mi amor ❤️</button>
 
     <!-- Lion Closing (hidden until button click) -->
     <div class="lion-closing" id="lionClosing" style="display:none;">
@@ -250,6 +255,11 @@
       <p class="lion-label">Te Amo ❤️</p>
     </div>
   </section>
+
+  <!-- ===== Fixed Scroll Arrow ===== -->
+  <div class="scroll-indicator-fixed" id="scrollArrow" aria-hidden="true">
+    <span class="scroll-arrow">↓</span>
+  </div>
 
   <script src="script.js"></script>
 </body>

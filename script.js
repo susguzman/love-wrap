@@ -13,7 +13,27 @@ document.addEventListener('DOMContentLoaded', () => {
   initCompatibilityAnalysis();
   initFallingPetals();
   initShowLionButton();
+  initScrollArrow();
 });
+
+/* ---------- 0a. Fixed Scroll Arrow ---------- */
+function initScrollArrow() {
+  const arrow = document.getElementById('scrollArrow');
+  if (!arrow) return;
+
+  window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight;
+    const winHeight = window.innerHeight;
+    const atBottom = scrollY + winHeight >= docHeight - 80;
+
+    if (atBottom) {
+      arrow.classList.add('hidden');
+    } else {
+      arrow.classList.remove('hidden');
+    }
+  });
+}
 
 /* ---------- 0. Animated Wave Background ---------- */
 function initWaveBackground() {

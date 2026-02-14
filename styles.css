@@ -213,11 +213,19 @@ body {
   outline: none;
 }
 
-.scroll-indicator {
-  position: absolute;
-  bottom: 32px;
+/* --- Fixed Scroll Arrow --- */
+.scroll-indicator-fixed {
+  position: fixed;
+  bottom: 28px;
   left: 50%;
   transform: translateX(-50%);
+  z-index: 99;
+  transition: opacity 0.5s ease;
+}
+
+.scroll-indicator-fixed.hidden {
+  opacity: 0;
+  pointer-events: none;
 }
 
 .scroll-arrow {
@@ -664,7 +672,7 @@ body {
 .compat-scanner {
   text-align: center;
   width: 100%;
-  margin-bottom: 40px;
+  margin-bottom: 16px;
 }
 
 .compat-status {
@@ -737,6 +745,52 @@ body {
 .compat-results .reveal {
   opacity: 0;
   transform: translateY(24px);
+}
+
+/* --- Album Photo --- */
+.album-photo {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: rotate(-6deg);
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  margin-bottom: -20px;
+}
+
+.album-photo:hover {
+  transform: rotate(-1deg) scale(1.03);
+}
+
+.album-frame {
+  background: #fff;
+  padding: 8px 8px 26px 8px;
+  border-radius: 6px;
+  box-shadow:
+    0 8px 30px rgba(80, 10, 20, 0.25),
+    0 2px 8px rgba(0, 0, 0, 0.12);
+  max-width: 190px;
+  width: 100%;
+}
+
+.album-frame img {
+  width: 100%;
+  display: block;
+  border-radius: 3px;
+  object-fit: cover;
+  aspect-ratio: 4 / 5;
+}
+
+.album-shadow {
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%;
+  height: 20px;
+  background: radial-gradient(ellipse, rgba(80, 10, 20, 0.2) 0%, transparent 70%);
+  filter: blur(8px);
+  z-index: -1;
 }
 
 /* --- Final Message --- */
@@ -842,6 +896,13 @@ body {
   transform: translateY(-3px) scale(1.06);
   box-shadow: 0 14px 42px rgba(183, 28, 28, 0.6);
   outline: none;
+}
+
+.made-with-btn--small {
+  font-size: 0.85rem;
+  padding: 10px 24px;
+  box-shadow: 0 5px 20px rgba(183, 28, 28, 0.35);
+  margin-top: 10px;
 }
 
 @keyframes btnPulse {
