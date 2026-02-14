@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initCompatibilityAnalysis();
   initFallingPetals();
   initShowLionButton();
+  initCarousel();
   initScrollArrow();
 });
 
@@ -346,4 +347,66 @@ function createHeartBurst(container) {
     // Remove after animation
     setTimeout(() => heart.remove(), 1800);
   }
+}
+
+/* ---------- 9. Photo Carousel ---------- */
+function initCarousel() {
+  const track = document.getElementById('carouselTrack');
+  const prevBtn = document.getElementById('carouselPrev');
+  const nextBtn = document.getElementById('carouselNext');
+  const dotsContainer = document.getElementById('carouselDots');
+  if (!track || !prevBtn || !nextBtn || !dotsContainer) return;
+
+  const slides = track.querySelectorAll('.carousel-slide');
+  const dots = dotsContainer.querySelectorAll('.carousel-dot');
+  const total = slides.length;
+  let current = 0;
+  let autoTimer;
+
+  function goTo(index) {
+    if (index < 0) index = total - 1;
+    if (index >= total) index = 0;
+    current = index;
+    track.style.transform = `translateX(-${current * 100}%)`;
+    dots.forEach((d, i) => d.classList.toggle('active', i === current));
+  }
+
+  prevBtn.addEventListener('click', () => { goTo(current - 1); resetAuto(); });
+  nextBtn.addEventListener('click', () => { goTo(current + 1); resetAuto(); });
+
+  dots.forEach(dot => {
+    dot.addEventListener('click', () => {
+      goTo(parseInt(dot.dataset.index));
+      resetAuto();
+    });
+  });
+
+  // Swipe support
+  let startX = 0, isDragging = false;
+  const viewport = document.getElementById('carouselViewport');
+
+  viewport.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].clientX;
+    isDragging = true;
+  }, { passive: true });
+
+  viewport.addEventListener('touchend', (e) => {
+    if (!isDragging) return;
+    isDragging = false;
+    const diff = startX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 50) {
+      diff > 0 ? goTo(current + 1) : goTo(current - 1);
+      resetAuto();
+    }
+  });
+
+  // Auto-play
+  function startAuto() {
+    autoTimer = setInterval(() => goTo(current + 1), 4000);
+  }
+  function resetAuto() {
+    clearInterval(autoTimer);
+    startAuto();
+  }
+  startAuto();
 }

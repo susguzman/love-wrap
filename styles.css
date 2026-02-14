@@ -672,6 +672,110 @@ body {
 }
 
 /* ============================================================
+   PHOTO CAROUSEL
+   ============================================================ */
+.carousel-section {
+  padding-bottom: 80px;
+}
+
+.carousel-wrapper {
+  position: relative;
+  max-width: 340px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.carousel-viewport {
+  overflow: hidden;
+  border-radius: 16px;
+  width: 100%;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.carousel-slide {
+  min-width: 100%;
+  padding: 10px;
+}
+
+.carousel-slide img {
+  width: 100%;
+  display: block;
+  border-radius: 10px;
+  object-fit: cover;
+  aspect-ratio: 3 / 4;
+  background: #f5f0eb;
+  padding: 6px;
+  box-shadow:
+    0 8px 30px rgba(0, 0, 0, 0.35),
+    0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(201, 168, 76, 0.3);
+  background: rgba(26, 26, 46, 0.7);
+  backdrop-filter: blur(8px);
+  color: #c9a84c;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  transition: background 0.3s ease, transform 0.3s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.carousel-arrow:hover {
+  background: rgba(139, 42, 42, 0.6);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-prev {
+  left: -8px;
+}
+
+.carousel-next {
+  right: -8px;
+}
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.carousel-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1px solid rgba(201, 168, 76, 0.4);
+  background: rgba(201, 168, 76, 0.15);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.carousel-dot.active {
+  background: #c9a84c;
+  border-color: #c9a84c;
+  transform: scale(1.2);
+  box-shadow: 0 0 10px rgba(201, 168, 76, 0.4);
+}
+
+/* ============================================================
    6. LO QUE APRENDIMOS
    ============================================================ */
 .lessons-section {
